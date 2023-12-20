@@ -32,6 +32,7 @@ jobs:
             workflow_dispatch - escrito a mão
           else
             "${{ github.event_name }}"
+          fi
 
 
 
