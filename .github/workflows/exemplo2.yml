@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
-          if "${{ github.event_name == 'workflow_dispatch' }}"
+          if "${{ github.event_name == 'workflow_dispatch' }}" then
             workflow_dispatch - escrito a mão
           else
             "${{ github.event_name }}"
