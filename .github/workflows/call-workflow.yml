@@ -1,0 +1,24 @@
+name: Docker Hub
+
+on:
+  push:
+    paths:
+      - "src/**"
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  imageName: cachorro.api
+  dotnetVersion: 7.x
+  csprojFolder: ./src/DEPLOY.Cachorro.Api/DEPLOY.Cachorro.Api.csproj
+
+jobs:
+  call-workflow-passing-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up JDK 17
+        uses: felipementel/github-actions-v1/.github/workflows/workflow1.yml@main
+        with:
+          config-path: .github/labeler.yml
+    
