@@ -1,0 +1,12 @@
+# .github/actions/my-action.yml
+# Note the special trigger 'on: workflow_call:'
+
+on:
+  workflow_call:
+    inputs:
+      username:
+        required: true
+        type: string
+    secrets:
+      envPAT:
+        required: true
