@@ -1,4 +1,4 @@
-name: Reusable workflow example
+name: Modelo com echo
 
 on:
   workflow_call:
@@ -12,14 +12,14 @@ on:
   workflow_dispatch:
 
 env:
-  imageName: cachorro.api
-  dotnetVersion: 7.x
-  csprojFolder: ./src/DEPLOY.Cachorro.Api/DEPLOY.Cachorro.Api.csproj
+  imageName: xxx.api
+  dotnetVersion: 8.x
+  csprojFolder: ./src/DEPLOY.xxx.Api/DEPLOY.xxx.Api.csproj
 
 jobs:
   build-and-sonar:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up JDK 17
+      - name: Executando do modelo
         run: |
           echo felipe
