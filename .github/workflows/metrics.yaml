@@ -11,4 +11,4 @@ jobs:
         with:
           access-token: ${{ secrets.authorized_pat}}
           org-summary: true
-          org-name: felipementel
+          org-name: felipementel-org
