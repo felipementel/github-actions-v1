@@ -1,0 +1,14 @@
+name: Copilot Usage Metrics Export
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    name: Copilot Usage Metrics Export Action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: bthomas2622/copilot-metrics-export-action@v1.1
+        with:
+          access-token: ${{ secrets.authorized-pat}}
+          org-summary: true
+          org-name: felipementel
