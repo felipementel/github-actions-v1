@@ -12,3 +12,7 @@ jobs:
           access-token: ${{ secrets.authorized_pat}}
           org-summary: true
           org-name: felipementel-org
+          # enterprise-summary: true
+          # enterprise-name: myenterpriseo
+          # team-summary: true
+          # team-name: engineering
