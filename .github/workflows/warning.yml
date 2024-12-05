@@ -1,0 +1,24 @@
+name: Warning
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  workflow_dispatch:
+   
+jobs:
+  Finally-job:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+    - name: Executar script com warnings
+      run: |
+        echo "::warning::Esse é um aviso durante a execução!"
+    
+    - name: Forçar falha
+      run: |
+        echo "::error::Algo deu errado."
+      continue-on-error: true
+    # exit 1
