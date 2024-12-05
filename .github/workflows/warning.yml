@@ -16,9 +16,3 @@ jobs:
     - name: Executar script com warnings
       run: |
         echo "::warning::Esse é um aviso durante a execução!"
-    
-    - name: Forçar falha
-      run: |
-        echo "::error::Algo deu errado."
-      continue-on-error: true
-    # exit 1
