@@ -8,7 +8,7 @@ jobs:
   DEV:
     strategy:
       matrix:
-        os: [ubuntu-latest, ubuntu-20.04]
+        os: [ubuntu-latest, ubuntu-20.04, windows-latest]
     runs-on: ${{ matrix.os }}
     environment: DEV
     concurrency:
@@ -22,9 +22,11 @@ jobs:
       
   HOM:
     strategy:
+      max-parallel: 2
       matrix:
-        os: [ubuntu-latest, ubuntu-20.04]
+        os: [ubuntu-latest, ubuntu-20.04, windows-]
     runs-on: ${{ matrix.os }}
+    
     environment: HOM
     concurrency:
       group: ${{ matrix.os }}-${{ github.workflow }}-${{ github.ref }}
@@ -37,6 +39,7 @@ jobs:
         
   PRD:
     strategy:
+      max-parallel: 1
       matrix:
         os: [ubuntu-latest, ubuntu-20.04]
     runs-on: ${{ matrix.os }}
@@ -44,7 +47,8 @@ jobs:
     concurrency:
       group: ${{ matrix.os }}-${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
-    needs: HOM
+    needs: 
+      - HOM
     steps:
     - name: Forçar falha
       run: |
