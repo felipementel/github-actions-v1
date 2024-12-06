@@ -12,7 +12,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     environment: DEV
     concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+      group: ${{ matrix.os }}-${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     steps:
     - name: Forçar falha
@@ -27,7 +27,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     environment: HOM
     concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+      group: ${{ matrix.os }}-${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     needs: [DEV]
     steps:
@@ -42,7 +42,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     environment: PRD
     concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+      group: ${{ matrix.os }}-${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     needs: HOM
     steps:
