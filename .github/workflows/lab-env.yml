@@ -19,10 +19,11 @@ jobs:
       run: |
         echo "::warning:: ${{ vars.ambiente }}"
       continue-on-error: true
+      
   HOM:
     runs-on: ${{ matrix.os }}
     environment: HOM
-    needs: DEV
+    # needs: DEV
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -33,10 +34,11 @@ jobs:
     - name: Forçar falha
       run: |
         echo "::warning:: ${{ vars.ambiente }}"
+        
   PRD:
     runs-on: ${{ matrix.os }}
-    environment: HOM
-    needs: HOM
+    environment: PRD
+    # needs: HOM
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
