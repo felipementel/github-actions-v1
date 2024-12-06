@@ -15,7 +15,7 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     steps:
-    - name: Forçar falha
+    - name: Ambiente de desenvolvimento
       run: |
         echo "::warning:: ${{ vars.ambiente }}"
       continue-on-error: true
@@ -31,7 +31,7 @@ jobs:
       cancel-in-progress: true
     needs: [DEV]
     steps:
-    - name: Forçar falha
+    - name: Ambiente de homolocacao
       run: |
         echo "::warning:: ${{ vars.ambiente }}"
         
@@ -40,12 +40,12 @@ jobs:
       matrix:
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
-    environment: [PRD]
+    environment: PRD
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     needs: HOM
     steps:
-    - name: Forçar falha
+    - name:Ambiente de producao
       run: |
         echo "::warning:: ${{ vars.ambiente }}"
