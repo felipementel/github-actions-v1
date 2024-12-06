@@ -1,0 +1,48 @@
+name: Error
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  workflow_dispatch:
+   
+jobs:
+  DEV:
+    runs-on: ${{ matrix.os }}
+    environment: DEV
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+    - name: Forçar falha
+      run: |
+        echo "::warning:: ${{ vars.ambiente }}"
+      continue-on-error: true
+  HOM:
+    runs-on: ${{ matrix.os }}
+    environment: HOM
+    needs: DEV
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+    - name: Forçar falha
+      run: |
+        echo "::warning:: ${{ vars.ambiente }}"
+  PRD:
+    runs-on: ${{ matrix.os }}
+    environment: HOM
+    needs: HOM
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+    - name: Forçar falha
+      run: |
+        echo "::warning:: ${{ vars.ambiente }}"
