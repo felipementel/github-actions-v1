@@ -3,6 +3,9 @@ name: Lab-env
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+      type: environment
    
 jobs:
   DEV:
