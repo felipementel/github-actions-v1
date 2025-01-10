@@ -17,6 +17,6 @@ jobs:
     - name: Forçar falha
       run: |
         echo "::error::Algo deu errado."
-        echo -e "### Teste de summary do canal deploy ✅⚡👍" >> $GITHUB_SETP_SUMMARY
+        echo -e "### Teste de summary do canal deploy ✅⚡👍" >> $GITHUB_STEP_SUMMARY
       continue-on-error: true
     # exit 1
