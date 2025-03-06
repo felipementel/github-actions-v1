@@ -47,13 +47,13 @@ Click `show paths` in order to see the dataflow path that resulted in this alert
 ```
 |Code|Appearing|
 |--|--|
-|$${\color{red}Red}$$	| $${\color{red}Red}$$ |
-|$${\color{green}Green}$$	| $${\color{green}Green}$$ |
-|$${\color{lightgreen}Light \space Green}$$	| $${\color{lightgreen}Light \space Green}$$ |
-|$${\color{blue}Blue}$$	| $${\color{blue}Blue}$$ |
-|$${\color{lightblue}Light \space Blue}$$	| $${\color{lightblue}Light \space Blue}$$ |
-|$${\color{black}Black}$$	| $${\color{black}Black}$$ |
-|$${\color{white}White}$$ |	$${\color{white}White}$$ |
+| $${\color{red}Red}$$	| $${\color{red}Red}$$ |
+| $${\color{green}Green}$$	| $${\color{green}Green}$$ |
+| $${\color{lightgreen}Light \space Green}$$	| $${\color{lightgreen}Light \space Green}$$ |
+| $${\color{blue}Blue}$$	| $${\color{blue}Blue}$$ |
+| $${\color{lightblue}Light \space Blue}$$	| $${\color{lightblue}Light \space Blue}$$ |
+| $${\color{black}Black}$$	| $${\color{black}Black}$$ |
+| $${\color{white}White}$$ |	$${\color{white}White}$$ |
 
 ![](https://img.shields.io/static/v1?label=&message=Ааи&color=green)
 
