@@ -6,7 +6,10 @@ on:
     inputs:
       environment:
       type: environment
-   
+
+permissions:
+  contents: read
+
 jobs:
   DEV:
     strategy:
